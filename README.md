@@ -10,5 +10,6 @@ The pushed version of YelpCamp is not a production-ready website, there are nece
   - CLOUDINARY_KEY=
   - CLOUDINARY_SECRET=
   - MAPBOX_TOKEN=
-- secret token in session configuration in app.js
-  - secret:
+- app.js
+  - secret token in the session configuration
+  - cloudinary account name in image source
