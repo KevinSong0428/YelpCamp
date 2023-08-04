@@ -107,7 +107,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/dus1nxwa7/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/CLOUDINARY_ACCOUNT/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                 "https://images.unsplash.com",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
@@ -117,12 +117,12 @@ app.use(
 
 // PASSPORT
 app.use(passport.initialize());
-// passport.session() middleware allows for persistant login sessions --> don't need to continuously login
+// passport.session() middleware allows for persistent login sessions --> don't need to continuously login
 app.use(passport.session()); // must be AFTER app.use(session)
 passport.use(new LocalStrategy(User.authenticate())); // passport will be using the local strategy. And for this local strategy, the authentication method is located on our 'User' model -- authenticate method is part of passport mongoose package
 
 // passport serialize vs deserialize - storing and unstoring user
-passport.serializeUser(User.serializeUser()) // <-- deteremining how we store a user IN the session
+passport.serializeUser(User.serializeUser()) // <-- determining how we store a user IN the session
 passport.deserializeUser(User.deserializeUser()); // how to get a user OUT of the session
 
 
